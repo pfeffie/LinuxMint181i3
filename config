@@ -209,7 +209,7 @@ bindsym $mod+Shift+space floating toggle
 bindsym $mod+j focus left
 bindsym $mod+k focus down
 bindsym $mod+l focus up
-bindsym $mod+m focus right
+bindsym $mod+odiaeresis focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -221,7 +221,7 @@ bindsym $mod+Right focus right
 bindsym $mod+Shift+j move left
 bindsym $mod+Shift+k move down
 bindsym $mod+Shift+l move up
-bindsym $mod+Shift+m move right
+bindsym $mod+Shift+odiaeresis move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -233,11 +233,11 @@ bindsym $mod+Shift+Right move right
 ###################       SCRATCHPAD      ##############################
 
 # move the currently focused window to the scratchpad
-# bindsym Mod1+Shift+minus move scratchpad
+bindsym $mod+Shift+minus move scratchpad
 
 # Show the next scratchpad window or hide the focused scratchpad window.
 # If there are multiple scratchpad windows, this command cycles through them.
-# bindsym Mod1+minus scratchpad show
+bindsym $mod+minus scratchpad show
 
 
 ################### TILING PARAMETERS ##############################
@@ -256,7 +256,7 @@ bindsym $mod+f fullscreen toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
+bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 
@@ -264,10 +264,10 @@ bindsym $mod+e layout toggle split
 bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+q focus parent
+bindsym $mod+p focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+c focus child
 
 
 ################### RELOAD AND EXIT #####################
@@ -300,7 +300,7 @@ mode "resize" {
         bindsym j resize shrink width 10 px or 10 ppt
         bindsym k resize grow height 10 px or 10 ppt
         bindsym l resize shrink height 10 px or 10 ppt
-        bindsym m resize grow width 10 px or 10 ppt
+        bindsym odiaeresis resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -392,28 +392,28 @@ workspace 9 output $secondMonitor
 workspace 10 output $secondMonitor
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1
-bindsym $mod+eacute workspace 2
-bindsym $mod+quotedbl workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft workspace 5
-bindsym $mod+section workspace 6
-bindsym $mod+egrave workspace 7
-bindsym $mod+exclam workspace 8
-bindsym $mod+ccedilla workspace 9
-bindsym $mod+agrave workspace 10
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1; workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2; workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3; workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4; workspace 4
+bindsym $mod+Shift+1 move container to workspace 1; workspace 1
+bindsym $mod+Shift+2 move container to workspace 2; workspace 2
+bindsym $mod+Shift+3 move container to workspace 3; workspace 3
+bindsym $mod+Shift+4 move container to workspace 4; workspace 4
 bindsym $mod+Shift+5 move container to workspace 5; workspace 5
-bindsym $mod+Shift+section move container to workspace 6; workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7; workspace 7
-bindsym $mod+Shift+exclam move container to workspace 8; workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9; workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10; workspace 10
+bindsym $mod+Shift+6 move container to workspace 6; workspace 6
+bindsym $mod+Shift+7 move container to workspace 7; workspace 7
+bindsym $mod+Shift+8 move container to workspace 8; workspace 8
+bindsym $mod+Shift+9 move container to workspace 9; workspace 9
+bindsym $mod+Shift+0 move container to workspace 10; workspace 10
 
 
 ################### MOUSE ######################
@@ -452,9 +452,9 @@ assign [class="Vlc|vlc"]                                                        
 assign [class="Vmplayer|VirtualBox"]                                                → 7
 assign [class="Nemo|Thunar|Caja|nautilus|Nautilus"]                                 → 8
 assign [class="Geary|Evolution"]                                                    → 9
-assign [class="Spotify|spotify"]                                                    → 10
+#assign [class="Spotify|spotify"]                                                    → 10
 #fix for spotify not moving to workspace 10
-for_window [class="Spotify"] move to workspace 10
+#for_window [class="Spotify"] move to workspace 10
 
 
 ################### EXECUTE ######################
@@ -467,7 +467,7 @@ exec_always --no-startup-id numlockx on
 # dropbox
 exec dropbox start
 # insync
-exec insync start
+#exec insync start
 
 #variety
 exec variety
@@ -488,8 +488,8 @@ for_window [class="Firefox"] focus
 #exec evolution
 
 #Music
-exec --no-startup-id spotify
-for_window [class="Spotify"] focus
+#exec --no-startup-id spotify
+#for_window [class="Spotify"] focus
 
 #Conky
 #exec ~/.config/i3/start-conkys.sh
@@ -538,8 +538,8 @@ bindsym control+mod1+e exec evolution;workspace 9;focus
 #bindsym control+mod1+e exec geary;workspace 9;focus
 
 #workspace 10 related
-bindsym $mod+F10 exec spotify;workspace 10;focus
-bindsym control+mod1+s exec spotify;workspace 10;focus
+#bindsym $mod+F10 exec spotify;workspace 10;focus
+#bindsym control+mod1+s exec spotify;workspace 10;focus
 
 #catfish
 bindsym control+mod1+c exec catfish;focus
@@ -708,9 +708,9 @@ new_float normal
 ###################       KEYBOARD      ##############################
 
 
-# AZERTY KEYBOARD
+# QWERTZ KEYBOARD
 # Change this if you use qwerty
-exec setxkbmap be
+exec setxkbmap de
 
 
 ###################       UNCLUTTER      ##############################
@@ -946,23 +946,23 @@ exec_always compton --config ~/.config/i3/compton.conf
 # gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/terminator
 # gsettings set org.cinnamon.desktop.default-applications.terminal exec /usr/bin/gnome-terminal
 
-bindsym $mod+Return exec gnome-terminal;focus
+#bindsym $mod+Return exec gnome-terminal;focus
 #bindsym $mod+Return exec i3-sensible-terminal;focus
 #bindsym $mod+Return exec terminator;focus
 #bindsym $mod+Return exec mate-terminal;focus
-#bindsym $mod+Return exec xfce4-terminal;focus
+bindsym $mod+Return exec xfce4-terminal;focus
 
 
-bindsym control+mod1+t exec gnome-terminal; focus
+#bindsym control+mod1+t exec gnome-terminal; focus
 #bindsym control+mod1+t exec terminator;focus
 #bindsym control+mod1+t exec mate-terminal; focus
-#bindsym control+mod1+t exec xfce4-terminal; focus
+bindsym control+mod1+t exec xfce4-terminal; focus
 
 
 #System monitor
-bindsym control+Shift+Escape exec gnome-system-monitor;focus
+#bindsym control+Shift+Escape exec gnome-system-monitor;focus
 #bindsym control+Shift+Escape exec mate-system-monitor;focus
-#bindsym control+Shift+Escape exec xfce4-taskmanager;focus
+bindsym control+Shift+Escape exec xfce4-taskmanager;focus
 
 #settings
 bindsym control+mod1+n exec cinnamon-settings

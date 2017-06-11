@@ -11,32 +11,22 @@
 #
 ##################################################################################################################
 
-#rm /tmp/sublime-text_build-3126_amd64.deb
 
-#wget https://download.sublimetext.com/sublime-text_build-3126_amd64.deb -O /tmp/sublime-text_build-3126_amd64.deb
-#sudo dpkg -i /tmp/sublime-text_build-3126_amd64.deb
 
-#rm /tmp/sublime-text_build-3126_amd64.deb
+# 1. Add the Spotify repository signing key to be able to verify downloaded packages
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 
-#
-# Sublime Text 3
-#
-sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+# 2. Add the Spotify repository
+echo deb http://dl.google.com/linux/chrome/deb/ stable main | sudo tee /etc/apt/sources.list.d/chrome.list
+
+# 3. Update list of available packages
 sudo apt-get update
-sudo apt-get install sublime-text-installer -y
 
-#
-# Sublime Text 2
-#
-#sudo add-apt-repository ppa:webupd8team/sublime-text-2 -y
-#sudo apt-get update
-#sudo apt-get install sublime-text -y
+# 4. Install Spotify
+sudo apt-get install google-chrome-stable -y
 
 
-##################################################################################################################
 
 echo "################################################################"
-echo "################      sublime text installed    ################"
+echo "###################   spotify installed   ######################"
 echo "################################################################"
-
-
